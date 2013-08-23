@@ -15,9 +15,9 @@ module.exports = function (req) {
     }[enc] || through;
 
     var s = createStream();
-    // the magic number to get the mem warning to go away on files that
+    // HACK: the magic number to get the mem warning to go away on files that
     // approach 1mb
-    s.setMaxListeners(18);
+    s.setMaxListeners(20);
 
     var stream = responseStream(s);
 
